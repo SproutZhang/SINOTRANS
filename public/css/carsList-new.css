@@ -1,0 +1,61 @@
+/*公共提取*/
+.layout{
+    padding: 0.2rem;
+}
+body{
+    color:#9d9d9d;
+}
+
+.select-carLists{
+    background-color: #fff;
+    padding: 0.2rem;
+    padding-top: 0;
+    border-radius: 4px;
+}
+.select-carLists ul li{
+    width: 100%;
+    height: 1.2rem;
+    line-height: 1.8rem;
+    border-bottom: 2px solid #ccc;
+    position: relative;
+
+}
+.select-carLists ul li span{
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: pink;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url("../images/down.png") no-repeat;
+    background-size: 60% 60%;
+
+}
+.select-carLists ul li input[type="text"]{
+    width: 100%;
+    height: 99%;
+}
+
+.select-carLists ul li:nth-child(7),.select-carLists ul li:nth-child(6),.select-carLists ul li:nth-child(5){
+    line-height: 1.5rem;
+    overflow: hidden;
+}
+.select-carLists ul li:last-child{
+    border: none;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.select-carLists-query{
+    width: 100%;
+    height: 1rem;
+}
+.select-carLists-query input{
+    width: 100%;
+    height: 0.8rem;
+    color: #fff;
+    background-color: #ccc;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}

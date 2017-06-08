@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>订单状态</title>
+    <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/css/order-status.css">
+    <script src="../../public/lib/RGraph/libraries/RGraph.common.core.js"></script>
+    <script src="../../public/lib/RGraph/libraries/RGraph.hbar.js"></script>
+</head>
+<body>
+<div class="layout">
+    <div class="order-date">
+        <div class="orderstart-date">
+            <span></span>
+            <input type="text" placeholder="请选择起始日期">
+        </div>
+        <div class="orderend-date">
+            <span></span>
+            <input type="text" placeholder="请选择终止日期">
+        </div>
+    </div>
+    <!--数据表-->
+    <div class="data-sheet">
+        <canvas id="cvs" width="350" height="300">[No canvas support]</canvas>
+        <div class="order-info">
+            <p>共有<span>2450</span>个订单<a href="order-details.html">查看详情>></a></p>
+        </div>
+    </div>
+</div>
+<script>
+    new RGraph.HBar({
+        id: 'cvs',
+        data: [50,80,60,40,30],
+        options: {
+            colors: ['#4db8db','#4db8ff','#4d94ff', '#658bd8','#5353b2'],
+            //colors: ['#164366','#164366','#164366','#FDB515','#164366'],
+            labels: ['status1','status2','status3','status4','status5'],
+            labelsAbove: true,
+            colorsSequential: true,//颜色区分
+            vmargin: 40,//控制柱状体宽度
+            hmargin: 25,
+            labelsAboveDecimals: 1,
+            noxaxis: true,
+            gutterLeft: 55,//距左距离
+            xlabels: true,
+            textAccessible: true,
+            labelsAbove:false  //后面数字不显示
+        }
+    }).on('draw', function (obj)  //柱条中显示数据
+    {
+        for (var i=0; i<obj.coords.length; ++i) {
+            obj.context.fillStyle = 'white';
+            RGraph.Text2(obj.context, {
+                font:'Verdana',
+                'size':10,
+                'x':obj.coords[i][0] + (obj.coords[i][2] / 2),
+                'y':obj.coords[i][1] + (obj.coords[i][3] / 2),
+                'text':obj.data_arr[i].toString(),
+                'valign':'center',
+                'halign':'center'
+            });
+        }
+    }).grow();
+</script>
+
+
+</body>
+</html>

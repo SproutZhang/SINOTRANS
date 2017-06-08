@@ -1,0 +1,74 @@
+/*公共提取*/
+.layout{
+    padding: 0.2rem;
+}
+body{
+    color:#9d9d9d;
+}
+.apm-query-result,.query-result-info,.query-result-info ul li{
+    border-radius: 4px;
+    box-shadow: 0 1px 1px #ccc;
+}
+
+.apm-query-result{
+    width: 100%;
+    height: 0.8rem;
+    background-color: #74baf3;
+    padding: 0.2rem;
+}
+.apm-query-result span{
+    display: block;
+    width: 100%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border-left: 2px solid #fff;
+    padding-left: 0.1rem;
+    color: #fff;
+}
+
+.query-result-info ul li{
+    width: 100%;
+    height: 2rem;
+    background-color: #fff;
+    margin-top: 0.1rem;
+    box-shadow: 0 1px 1px #ccc;
+    border-radius: 4px;
+    padding-left: 0.2rem;
+}
+.query-result-info ul li p{
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.25rem;
+    padding-right: 0.2rem;
+}
+.query-result-info .info-l{
+    width: 40%;
+    height: 2rem;
+    border-right:1px solid #ccc;
+    box-sizing: border-box;
+
+}
+.query-result-info .info-c{
+    width: 35%;
+    margin-left:0.2rem;
+}
+.query-result-info .info-r{
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+.query-result-info .info-r span{
+    display: block;
+    width: 0.3rem;
+    height: 0.3rem;
+    color: #fff;
+    line-height: 0.3rem;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 50%;
+    background-color: #74baf3;
+    position: absolute;
+    right: 0.2rem;
+    top: 50%;
+    margin-top: -0.15rem;
+}
