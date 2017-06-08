@@ -1,0 +1,117 @@
+/*公共提取*/
+.layout{
+    padding: 0.2rem;
+}
+body{
+    color:#9d9d9d;
+}
+.locale-car-query,.select-warehouse,.query-results,.carlist-num,.warehouse{
+    border-radius: 4px;
+    background-color: #fff;
+    margin-top: 0.1rem;
+    box-shadow: 0 1px 1px #ccc;
+}
+
+
+.locale-car-query{
+    width: 100%;
+    height: 0.7rem;
+    padding-left: 1rem;
+    position: relative;
+}
+.locale-car-query a{
+    width: 0.8rem;
+    height: 0.7rem;
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    background: url("../images/erweima.png") no-repeat 0.2rem;
+}
+.locale-car-query input{
+    width: 85%;
+    height: 0.7rem;
+}
+.locale-car-query span{
+    width: 10%;
+    height: 0.4rem;
+    border-left: 2px solid #999;
+    background: url("../images/search.png") no-repeat 0.2rem;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.15rem;
+}
+/*选择查看仓库*/
+.select-warehouse{
+    width: 100%;
+    height: 0.7rem;
+    padding: 0.2rem;
+    position: relative;
+    
+}
+.select-warehouse a{
+    width: 10%;
+    height: 0.4rem;
+    background: url("../images/down.png") no-repeat ;
+    background-size:70% 100%;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.15rem;
+}
+.warehouse{
+    margin-top:-1px;
+    background-color: #ededed;
+}
+.warehouse ul li{
+    width: 100%;
+    background-color: #fff;
+}
+.warehouse ul li h3{
+    font-size: 0.3rem;
+    padding: 0.1rem;
+    background-color: #ededed;
+}
+.warehouse ul li a{
+    display: inline-block;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 0 0.4rem ;
+    margin: 0.2rem 0 0.2rem 0.2rem;
+}
+
+/*查询结果*/
+.query-results{
+    width: 100%;
+    height: 3rem;
+}
+.query-results h3{
+    font-size: 0.3rem;
+    padding: 0.1rem;
+}
+.query-results ul li{
+    width: 100%;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    margin-top: 0.1rem;
+    padding-left:0.1rem;
+}
+.query-results ul li:last-child span{
+    display: inline-block;
+    width: 40%;
+    padding-left: 0.1rem;
+    height: 0.6rem;
+    color: #fff;
+    background-color: #008000;
+}
+/*排队数量*/
+.carlist-num{
+    width: 100%;
+    height: 4rem;
+    overflow: hidden;
+}
+.carlist-num img{
+    display: block;
+    margin: 0.5rem auto;
+}
+.carlist-num p{
+    padding-left: 0.1rem;
+}

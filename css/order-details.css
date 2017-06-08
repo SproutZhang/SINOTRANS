@@ -1,0 +1,83 @@
+
+/*公共提取*/
+.layout{
+    padding: 0.2rem;
+}
+.order-query,.order-status,.order-status-info{
+    border-radius: 4px;
+}
+
+/*订单查询*/
+.order-query{
+    width: 100%;
+    height: 0.7rem;
+    background-color: #fafafa;
+    padding-left: 1rem;
+    position: relative;
+}
+.order-query a{
+    width: 0.8rem;
+    height: 0.7rem;
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    background: url("../images/erweima.png") no-repeat 0.2rem;
+}
+.order-query input{
+    width: 85%;
+    height: 0.7rem;
+    background-color: #fafafa;
+}
+.order-query span{
+    width: 10%;
+    height: 0.4rem;
+    border-left: 2px solid #999;
+    background: url("../images/search.png") no-repeat 0.2rem;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.15rem;
+}
+/*订单状态*/
+.order-status{
+    width: 100%;
+    height: 1rem;
+    background-color: #74baf3;
+    margin: 0.2rem 0;
+}
+.order-status ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding-top: 0.25rem;
+}
+.order-status ul li a{
+    display: inline-block;
+    width: 100%;
+    height: 0.4rem;
+    line-height:0.4rem;
+    color: #fff;
+    border-right:2px solid #fff;
+}
+.order-status ul li:last-child a{
+    border-right:none;
+}
+
+/*订单状态详情*/
+.order-status-info{
+    background-color: #a5c8e7;
+
+}
+.order-status-info ul li{
+    width: 100%;
+    height: 1.6rem;
+    margin-top: 0.1rem;
+    background-color: #fff;
+}
+.order-status-info ul li h3{
+    color: #828282;
+    font-size: 0.25rem;
+    width: 2.5rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-align: center;
+}

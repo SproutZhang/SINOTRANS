@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <script src="lib/RGraph/libraries/RGraph.common.core.js"></script>
+    <script src="lib/RGraph/libraries/RGraph.hbar.js"></script>
+
+</head>
+<body>
+<canvas id="cvs" width="350" height="200">[No canvas support]</canvas>
+<script>
+    window.onload = function ()
+    {
+        var myGraph = new RGraph.HBar("cvs", [260, 620, 820, 550, 420]); //绘制柱状图，指定数据
+        myGraph.Set("chart.labels", ['Status1', 'Status2', 'Status3', 'Status4', 'Status5']); //指定x轴坐标轴的文字
+        myGraph.Set("chart.labels.above", true); //指定在坐标轴顶部绘制说明销售数量的文字
+        myGraph.Set("chart.colors",['#4db8db','#4db8ff','#4d94ff','#658bd8','#5353b2']);
+        myGraph.Set("chart.background.grid.autofit", true);  //指定网格自动与坐标轴单位对齐
+        myGraph.Set("chart.background.grid.autofit.align", true);  //指定网格自动与坐标轴单位对齐
+        myGraph.Set("chart.gutter", 40); //指定标签文字所使用的空间文字
+        myGraph.Draw(); //绘制柱状图
+    };
+</script>
+
+
+</body>
+
+</html>

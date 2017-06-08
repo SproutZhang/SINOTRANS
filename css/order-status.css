@@ -1,0 +1,74 @@
+.layout{
+    padding: 0.2rem;
+}
+.order-date{
+    width: 100%;
+    height: 1.8rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px #ccc;
+}
+.order-date .orderstart-date{
+    width: 100%;
+    height: 0.8rem;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 1px #ccc;
+}
+.orderstart-date,.orderend-date{
+    padding-top: 0.1rem;
+}
+.orderstart-date span,.orderend-date span{
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0.1rem 0.2rem 0 0.2rem;
+    vertical-align: middle;
+}
+.orderstart-date span{
+    background: url("../images/date01.png") no-repeat ;
+}
+.orderend-date span{
+    background: url("../images/date02.png") no-repeat ;
+}
+.order-date input{
+    width: 80%;
+    height:0.6rem;
+    border: none;
+    outline: none;
+    background-color: #f9f9f9 ;
+}
+.order-date .orderend-date{
+    width: 100%;
+    height: 0.8rem;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-top: 0.2rem;
+}
+
+.data-sheet{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 0.2rem;
+    border-radius: 4px;
+    padding: 0.8rem 0 0 0.2rem;
+}
+.data-sheet .order-info{
+    width: 100%;
+    height: 2rem;
+    margin: 1rem 0 0.3rem 0;
+    padding-top:1rem;
+}
+.data-sheet .order-info p{
+    width: 100%;
+    height: 0.5rem;
+    color: #666;
+    border-bottom:1px solid #d5d6db;
+
+}
+.data-sheet .order-info p span{}
+.data-sheet .order-info p a{
+    color: #4db8ff;
+    font-size: 0.35rem;
+    margin-left: 2.5rem;
+}

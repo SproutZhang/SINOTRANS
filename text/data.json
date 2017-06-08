@@ -1,0 +1,9 @@
+{
+  "Monday": {"max":950,"registered":480,"left":470,"people":30},
+  "Tuesday": {"max":1000,"registered":200,"left":800,"people":3},
+  "Wednesday": {"max":800,"registered":390,"left":410,"people":35},
+  "Thursday": {"max":800,"registered":800,"left":0,"people":33},
+  "Friday": {"max":800,"registered":390,"left":410,"people":15},
+  "Saturday ": {"max":900,"registered":0,"left":900,"people":3},
+  "Sunday": {"max":1200,"registered":600,"left":600,"people":10}
+ }

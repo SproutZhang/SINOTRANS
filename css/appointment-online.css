@@ -1,0 +1,96 @@
+
+.layout{
+    padding: 0.1rem;
+}
+.appointment-query,.appointment-status,.appointment-info{
+    border-radius: 4px;
+    margin-top: 0.1rem;
+    box-shadow: 0 1px 1px #ccc;
+}
+body{
+    color:#9d9d9d;
+}
+
+/*查询*/
+
+.appointment-query{
+    width: 100%;
+    height: 1.5rem;
+    background-color: #74baf3;
+    padding: 0.45rem 0 0 0.4rem;
+}
+.appointment-query .appointment-query-in{
+    width: 95%;
+    height: 0.6rem;
+    border-radius: 4px;
+    background-color: #fff;
+    position: relative;
+    padding-left: 0.6rem;
+
+}
+.appointment-query-in a{
+    width: 0.6rem;
+    height: 0.6rem;
+    background: url("../images/search.png") no-repeat 0.1rem 0.1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.appointment-query-in input{
+    width: 99%;
+    height: 0.6rem;
+}
+
+/*状态查询*/
+
+.appointment-status {
+    width: 100%;
+    height: 0.6rem;
+    background-color: #fff;
+    margin-top: 0;
+}
+.appointment-status ul li{
+    width: 33%;
+    float: left;
+    text-align: center;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border-right:1px solid #9d9d9d;
+}
+.appointment-status ul li:last-child{
+    border-right:none;
+}
+.appointment-status ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.appointment-status ul li a:hover{
+    color: #74baf3;
+}
+
+/*信息*/
+
+.appointment-info ul li{
+    width: 100%;
+    height: 2rem;
+    background-color: #fff;
+    margin-top: 0.1rem;
+    box-shadow: 0 1px 1px #ccc;
+    border-radius: 4px;
+    padding-left: 0.2rem;
+}
+.appointment-info ul li p{
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.25rem;
+    padding-right: 0.2rem;
+}
+.appointment-info .info-l{
+    height: 2rem;
+    border-right:1px solid #ccc;
+
+}
+.appointment-info .info-r{
+    margin-left:0.2rem;
+}
