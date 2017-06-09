@@ -207,3 +207,18 @@
     /*color:#000;*/
     /*font-weight:700;*/
 /*}*/
+
+/*swiper插件样式修改*/
+
+.slide .slide-desc{
+    text-align: left;
+    font-size: 0.3rem;
+}
+.slide .dot .cur{
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+.slide .dot span{
+    width: 0.15rem;
+    height: 0.15rem;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/login.css">
+
+</head>
+<body>
+    <div class="layout">
+        <div class="login-face">
+            欢迎登录
+        </div>
+        <div class="login-cont">
+            <form>
+                <ul>
+                    <li>
+                        <label for="">用户名：</label>
+                        <input type="text" name="name" class="name">
+                    </li>
+                    <li>
+                        <label for="">密码：</label>
+                        <input type="password" name="pass" class="pass">
+                    </li>
+                    <li>
+                        <label for="">验证手机：</label>
+                        <input type="text" name="mobile" class="mobile">
+                    </li>
+                    <li>
+                        <label for="">短信验证码：</label>
+                        <input type="text" name="code" class="code">
+                        <input type="button" value="获取验证码" class="verify" >
+                    </li>
+                    <li>
+                        <input type="button" class="submit" value="立即登录">
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+        <!-- 提示信息 -->
+        <div class="tips">
+            <p>用户名不能为空</p>
+        </div>
+
+
+    </div>
+    <script src="../public/lib/zepto/zepto.min.js"></script>
+    <script>
+        $(function(){
+            $(".verify").on("click",function(){
+                //给按钮加样式
+                var btn = $(this);
+                if(btn.hasClass("disabled")){
+                    return;
+                }
+                btn.addClass("disabled");
+
+                //获取用户输入的手机号
+                var tel = $(".mobile").val();
+                //console.log(tel.length);
+                //写一个方法，在beforeSend里面进行验证
+                $.ajax({
+                    beforeSend:function(){
+                        if(tel.length==11){
+                            //验证通过
+                            var second = 60;
+                            var timer = window.setInterval(function(){
+                                second--;
+                                if(second==0){
+                                    clearInterval(timer);
+                                    btn.removeClass("disabled");
+                                    btn.val("获取验证码");
+                                    return;
+                                }
+                                btn.val(second+"秒之后重新获取");
+                            },1000)
+                        }else{
+                            //验证不通过，给用户提示
+                            $(".tips>p").text("请输入正确的手机号哦亲");
+                            return false;
+                        }
+                    },
+                    url:"",
+                    type:"get",
+                    data:"",
+                    success:function(){
+
+                    }
+                });
+
+
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

@@ -147,3 +147,14 @@
     font-size: 0.2rem;
     color: #999;
 }
+
+/*日期插件样式调试*/
+.weui-picker-modal{
+    height: 208px;
+}
+.weui-picker-modal .toolbar-inner{
+    height: 35px;
+}
+.weui-picker-modal .picker-items{
+    height: 172px;
+}

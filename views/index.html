@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>中国外运</title>
     <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../public/css/index.css">
-    <link rel="stylesheet" href="../public/lib/swiper/css/swiper.min.css">
 </head>
-<body>
+<body ontouchstart>
     <div class="layout">
         <header class="bgc top-bar">
             <a href="personal-center.html" class="headicon"><img src="../public/images/headicon.jpeg" alt=""></a>
@@ -26,19 +27,31 @@
 
         <!--轮播图部分-->
         <div class="l-banner">
-            <div class="banner swiper-container">
-                <ul class="clearfix swiper-wrapper">
-                    <li class="swiper-slide"><span>一站式工程物流解决方案设计</span><a href="#"><img src="../public/images/banner1.jpg" alt=""></a></li>
-                    <li class="swiper-slide"><span>123站式工程物流解决方案设计</span><a href="#"><img src="../public/images/banner2.jpg" alt=""></a></li>
-                    <li class="swiper-slide"><span>34523333流解决方案设计</span><a href="#"><img src="../public/images/banner3.jpg" alt=""></a></li>
+            <div class="slide" id="slide1">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="../public/images/banner1.jpg" alt="">
+                        </a>
+                        <div class="slide-desc">一站式工程物流解决方式</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../public/images/banner2.jpg" alt="">
+                        </a>
+                        <div class="slide-desc">333工程物流解决方式</div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../public/images/banner3.jpg" alt="">
+                        </a>
+                        <div class="slide-desc">22222222方式</div>
+                    </li>
                 </ul>
-                <div class="banner-point">
+                <div class="dot">
                     <span></span>
-                    <ul class="clearfix swiper-pagination">
-                        <li class="now"></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </div>
@@ -59,7 +72,8 @@
             </ul>-->
         </footer>
     </div>
-    <script src="../public/lib/swiper/js/swiper.min.js"></script>
+    <script src="../public/lib/weui+/zepto.min.js"></script>
+    <script src="../public/lib/weui+/swipe.js"></script>
     <script src="../public/js/swiper.js"></script>
 </body>
 </html>

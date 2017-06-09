@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>现场车辆</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/locale-cars.css">
+    <script src="../../public/lib/weui+/zepto.min.js"></script>
+    <script>
+        function selectmenu(n){
+            var eleMore = document.getElementById("menu_"+n);
+            if(eleMore.style.display=="none"){
+                eleMore.style.display = 'block';
+                $("#cell_"+n).removeClass("icon-74");
+                $("#cell_"+n).addClass("icon-35 ");
+            }else{
+                eleMore.style.display = 'none';
+                $("#cell_"+n).removeClass("icon-35");
+                $("#cell_"+n).addClass("icon-74");
+            }
+        }
+    </script>
+
 </head>
-<body>
+<body ontouchstart>
     <div class="layout">
         <div class="locale-car-query">
             <a href="#"></a>
@@ -15,42 +33,45 @@
             <span></span>
         </div>
         <!--选择查看仓库-->
-        <div class="select-warehouse">
-            选择要查看的仓库
-            <a></a>
-        </div>
-        <div class="warehouse">
-            <ul class="clearfix">
-                <li>
-                    <h3>上海</h3>
-                    <a href="javascript:;">外高桥保税仓库</a>
-                    <a href="javascript:;">洋山仓库</a>
-                </li>
-                <li>
-                    <h3>宁波</h3>
-                    <a href="javascript:;">宁波仓库</a>
-                    <a href="javascript:;">洋山仓库</a>
-                    <a href="javascript:;">洋山仓库</a>
-                </li>
-                <li>
-                    <h3>深圳</h3>
-                    <a href="javascript:;">深圳仓库</a>
-                    <a href="javascript:;">洋山仓库</a>
-                </li>
-                <li>
-                    <h3>天津</h3>
-                    <a href="javascript:;">天津仓库</a>
-                </li>
-                <li>
-                    <h3>青岛</h3>
-                    <a href="javascript:;">青岛仓库</a>
-                </li>
-                <li>
-                    <h3>厦门</h3>
-                    <a href="javascript:;">厦门仓库</a>
-                </li>
-            </ul>
-        </div>
+        <div class="select-warehouse" onclick="selectmenu('1');">
+                请选择要查看的仓库
+                <span></span>
+                <a id="cell_1" class="icon icon-74 f20 f-gray"></a>
+            </div>
+        <div class="warehouse" id="menu_1" style="display: none;">
+                <ul class="clearfix">
+                    <li>
+                        <h3>上海</h3>
+                        <a href="javascript:;">外高桥保税仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
+                    </li>
+                    <li>
+                        <h3>宁波</h3>
+                        <a href="javascript:;">宁波仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
+                    </li>
+                    <li>
+                        <h3>深圳</h3>
+                        <a href="javascript:;">深圳仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
+                    </li>
+                    <li>
+                        <h3>天津</h3>
+                        <a href="javascript:;">天津仓库</a>
+                    </li>
+                    <li>
+                        <h3>青岛</h3>
+                        <a href="javascript:;">青岛仓库</a>
+                    </li>
+                    <li>
+                        <h3>厦门</h3>
+                        <a href="javascript:;">厦门仓库</a>
+                    </li>
+                </ul>
+            </div>
+
+
         <!--查询结果-->
         <div class="query-results">
             <h3>查询结果</h3>
@@ -66,6 +87,24 @@
             <p>当前排队数量： <strong>18</strong>辆车</p>
         </div>
     </div>
+    <script>
+        $(function(){
+           //1.获取所有id为menu_1下面的ul下面的li下面的a
+            //2.点击后class为select-warehouse的内容变为当前选择,下拉列表为隐藏
+            //3.把span标签里的内容填上当前选择的内容，设置属性padding: 0.05rem 0.8rem;
+
+            var menu = $("#menu_1");
+            var menuUl = menu.find("ul");
+            console.log(menuUl);
+            var menuUlLi = menuUl.find("li");
+            console.log(menuUlLi);
+            for( var i=0;i<menuUlLi.length; i++){
+                menuUlLi[i]
+            }
+
+        });
+    </script>
+
 
 
 </body>

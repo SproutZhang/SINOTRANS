@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>预约查询</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/reservation-query.css">
 </head>
-<body>
+<body ontouchstart>
     <div class="layout">
         <!--日期-->
         <div class="search-date">
             <span></span>
-            <input type="text" placeholder="请选择要查询的集货交期">
+            <input type="text" placeholder="请选择要查询的集货交期" id="dateQuery" value="">
         </div>
 
         <!--地点-->
@@ -43,32 +44,14 @@
             <ul>
                 <li>
                     <h3>2017年6月5日 <span>  周一</span></h3>
-                    <ul class="show-time">
-                        <li>8:00-11:00</li>
-                        <li>12:00-15:00</li>
-                        <li>15:00-17:00</li>
-                        <li>18:00-21:00</li>
-                    </ul>
                     <canvas id="cvs1" width="350" height="180">[No canvas support]</canvas>
                 </li>
                 <li>
                     <h3>2017年6月5日 <span>  周一</span></h3>
-                    <ul class="show-time">
-                        <li>8:00-11:00</li>
-                        <li>12:00-15:00</li>
-                        <li>15:00-17:00</li>
-                        <li>18:00-21:00</li>
-                    </ul>
                     <canvas id="cvs2" width="350" height="180">[No canvas support]</canvas>
                 </li>
                 <li>
                     <h3>2017年6月5日 <span>  周一</span></h3>
-                    <ul class="show-time">
-                        <li>8:00-11:00</li>
-                        <li>12:00-15:00</li>
-                        <li>15:00-17:00</li>
-                        <li>18:00-21:00</li>
-                    </ul>
                     <canvas id="cvs3" width="350" height="180">[No canvas support]</canvas>
                 </li>
             </ul>
@@ -78,11 +61,14 @@
 
     </div>
 
-    <script type="text/javascript" src="../../public/lib/zepto/zepto.min.js"></script>
+    <script type="text/javascript" src="../../public/lib/weui+/zepto.min.js"></script>
+    <script type="text/javascript" src="../../public/lib/weui+/picker.js"></script>
     <script src="../../public/lib/RGraph/libraries/RGraph.common.core.js" ></script>
     <script src="../../public/lib/RGraph/libraries/RGraph.common.key.js" ></script>
     <script src="../../public/lib/RGraph/libraries/RGraph.hbar.js" ></script>
     <script type="text/javascript" src="../../public/js/reservation-query.js"></script>
+    <script type="text/javascript" src="../../public/js/datePicker.js"></script>
+
 
 </body>
 </html>
