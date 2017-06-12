@@ -1,9 +1,11 @@
 /*公共提取*/
 .layout{
     padding: 0.2rem;
+
 }
 body{
     color:#9d9d9d;
+    position: relative;
 }
 
 .select-appointment{
@@ -20,6 +22,7 @@ body{
     position: relative;
 
 }
+
 .select-appointment ul li span{
     width: 0.5rem;
     height: 0.5rem;
@@ -34,6 +37,14 @@ body{
 .select-appointment ul li input[type="text"]{
     width: 100%;
     height: 99%;
+}
+.select-appointment ul li input.reservation-date,#timeInterval,.select-appointment ul li input.input-box
+{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 1.8rem;
+    bottom: 0;
 }
 .select-appointment ul li:nth-child(7){
     line-height: 1.2rem;
@@ -52,8 +63,60 @@ body{
     width: 100%;
     height: 0.8rem;
     color: #fff;
-    background-color: #ccc;
+    background-color: #4cb7ff;
     position: fixed;
     left: 0;
     bottom: 0;
+}
+
+/*底部弹出层样式*/
+.port-of-loading,.zwy-warehouse{
+    height: 8rem;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    left: 0;
+    bottom: -8rem;
+    overflow: hidden;
+    margin:0 0.2rem;
+}
+.close{
+    width: 100%;
+    color: #ccc;
+    text-align: right;
+    padding: 0.2rem;
+}
+.port-of-loading ul li,.zwy-warehouse ul li{
+    float: left;
+    padding: 0.1rem 0.7rem;
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 0.2rem 0 0 0.2rem;
+}
+.port-of-loading input,.zwy-warehouse input{
+    width: 100%;
+    height: 0.8rem;
+    color:#fff;
+    text-align: center;
+    background-color: #4cb7ff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+/*日期插件样式调试*/
+.weui-picker-modal{
+    height: 208px;
+}
+.weui-picker-modal .toolbar-inner{
+    height: 35px;
+}
+.weui-picker-modal .picker-items{
+    height: 172px;
 }

@@ -5,27 +5,127 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>新建预约</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/reservation-new.css">
 </head>
 <body>
     <div class="layout">
         <div class="select-appointment">
             <ul>
-                <li>起运港<span></span></li>
-                <li>中外运仓库<span></span></li>
-                <li>集货交期<span></span></li>
-                <li>目的港交期<span></span></li>
-                <li>预约日期<span></span></li>
-                <li>预约时段<span></span></li>
+                <li>起运港 <input type="text" class="input-box" id="portOfLoading"><span></span></li>
+                <li>中外运仓库<input type="text" class="input-box" id="zwyWarehouse"><span></span></li>
+                <li>集货交期 <input type="text" class="reservation-date"><span></span></li>
+                <li>目的港交期 <input type="text" class="reservation-date"><span></span></li>
+                <li>预约日期 <input type="text" class="reservation-date"><span></span></li>
+                <li>预约时段 <input type="text"  id="timeInterval"><span></span></li>
                 <li><input type="text" placeholder="备注"></li>
-                <li><input type="radio" id="radio"> 是否接受排队等待</li>
+                <li><input type="checkbox"> 是否接受排队等待</li>
             </ul>
         </div>
         <div class="select-apm-query">
             <input type="submit" value="查询">
         </div>
+
     </div>
-    <script src="../../public/lib/zepto/zepto.min.js"></script>
+    <div class="port-of-loading hide" id="showMenu1">
+        <div class="close">
+            X
+        </div>
+        <ul>
+            <li>上海</li>
+            <li>宁波</li>
+            <li>深圳</li>
+            <li>天津</li>
+            <li>青岛</li>
+            <li>厦门</li>
+        </ul>
+
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+
+        <input type="submit" value="确认">
+    </div>
+    <div class="zwy-warehouse hide" id="showMenu2">
+        <div class="close">
+            X
+        </div>
+        <ul>
+            <li>上海</li>
+            <li>宁波</li>
+            <li>深圳</li>
+            <li>天津</li>
+            <li>青岛</li>
+            <li>厦门</li>
+        </ul>
+
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <ul>
+            <li>外高桥保税仓库</li>
+            <li>洋山仓库</li>
+        </ul>
+        <input type="submit" value="确认">
+    </div>
+    <script type="text/javascript" src="../../public/lib/weui+/zepto.min.js"></script>
+    <script type="text/javascript" src="../../public/lib/weui+/picker.js"></script>
+    <script type="text/javascript" src="../../public/js/datePicker.js"></script>
+    <script>
+        $(function(){
+           $("#portOfLoading").click(function(){
+               $("#showMenu1").addClass("show").animate({"bottom":0},500);
+           });
+            $(".close").click(function(){
+                $("#showMenu1").animate({"bottom":"-8rem"},500).removeClass("show");
+            });
+
+            $("#zwyWarehouse").click(function(){
+                $("#showMenu2").addClass("show").animate({"bottom":0},500);
+            });
+            $(".close").click(function(){
+                $("#showMenu2").animate({"bottom":"-8rem"},500).removeClass("show");
+            });
+        });
+    </script>
 
 
 </body>

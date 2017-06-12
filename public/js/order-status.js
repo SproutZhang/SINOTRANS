@@ -3,43 +3,78 @@
  */
 $(function(){
 
-    /*图表*/
-    new RGraph.HBar({
-        id: 'cvs',
-        data: [50,80,60,40,30],
-        options: {
-            colors: ['#4db8db','#4db8ff','#4d94ff', '#658bd8','#5353b2'],
-            //colors: ['#164366','#164366','#164366','#FDB515','#164366'],
-            labels: ['status1','status2','status3','status4','status5'],
-            labelsAbove: true,
-            colorsSequential: true,//颜色区分
-            vmargin: 40,//控制柱状体宽度
-            hmargin: 25,
-            labelsAboveDecimals: 1,
-            noxaxis: true,
-            gutterLeft: 55,//距左距离
-            xlabels: true,
-            textAccessible: true,
-            labelsAbove:false  //后面数字不显示
-        }
-    }).on('draw', function (obj)  //柱条中显示数据
-    {
-        for (var i=0; i<obj.coords.length; ++i) {
-            obj.context.fillStyle = 'white';
-            RGraph.Text2(obj.context, {
-                font:'Verdana',
-                'size':10,
-                'x':obj.coords[i][0] + (obj.coords[i][2] / 2),
-                'y':obj.coords[i][1] + (obj.coords[i][3] / 2),
-                'text':obj.data_arr[i].toString(),
-                'valign':'center',
-                'halign':'center'
+    function circleCharts(dataId,dataNum){
+        pie1 = new RGraph.SVG.Pie({
+            id: dataId[0],
+            data: [dataNum[0],100-dataNum[0]],
+            options: {
+                colors: ['#00b150', '#a5a5a5']
+            }
+        }).draw().exec(function (obj)
+        {
+            RGraph.SVG.create({
+                svg: obj.svg,
+                type: 'circle',
+                parent: obj.svg.all,
+                attr: {
+                    cx: obj.centerx,
+                    cy: obj.centery,
+                    r: obj.radius - 10,  //圆环的宽
+                    fill: '#fff'  //底色
+                }
             });
-        }
-    }).grow();
+        });
 
-    
+        new RGraph.SVG.Pie({
+            id: dataId[1],
+            data: [dataNum[1],100-dataNum[1]],
+            options: {
+                colors: ['#ffc100', '#a5a5a5']
+            }
+        }).draw().exec(function (obj)
+        {
+            RGraph.SVG.create({
+                svg: obj.svg,
+                type: 'circle',
+                parent: obj.svg.all,
+                attr: {
+                    cx: obj.centerx,
+                    cy: obj.centery,
+                    r: obj.radius - 10,
+                    fill: '#fff'
+                }
+            });
+        });
 
+
+        new RGraph.SVG.Pie({
+            id: dataId[2],
+            data: [dataNum[2],100-dataNum[2]],
+            options: {
+                colors: ['#ff0000', '#a5a5a5']
+            }
+        }).draw().exec(function (obj)
+        {
+            RGraph.SVG.create({
+                svg: obj.svg,
+                type: 'circle',
+                parent: obj.svg.all,
+                attr: {
+                    cx: obj.centerx,
+                    cy: obj.centery,
+                    r: obj.radius - 10,
+                    fill: '#fff'
+                }
+            });
+        });
+    }
+    var dataId = ["chart-container1","chart-container2","chart-container3"];
+    var dataNum = [50,30,20];
+    var dataCharts1 = circleCharts(dataId,dataNum);
+
+    var dataId = ["chart-container4","chart-container5","chart-container6"];
+    var dataNum = [60,80,10];
+    var dataCharts2 = circleCharts(dataId,dataNum);
 
 
 });
