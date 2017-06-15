@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>订单状态</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/order-status.css">
     <script src="../../public/lib/RGraph/libraries/RGraph.svg.common.core.js"></script>
@@ -14,57 +15,15 @@
 <body ontouchstart>
 <div class="layout">
     <div class="order-date">
-        <input type="text" placeholder="起始日期" id="dateStart" value="">
-        <input type="text" placeholder="终止日期" id="dateEnd" value="">
+        <input type="text" placeholder="起始日期" id="dateStart" value="2017-05-14">
+        <input type="text" placeholder="终止日期" id="dateEnd" value="2017-06-14">
+        <img src="../../public/images/search.png" alt="" id="showLoading" >
     </div>
+
     <!--数据表-->
     <div class="data-sheet">
-        <ul>
-            <li>
-                <div class="order-title">
-                    <h3>status1:</h3>
-                    <p>总订单量 <span>15000件</span></p>
-                </div>
-                <div class="order-info">
-                    <div class="meters">
-                        <div id="chart-container1" class="chart-container1">
-                            <div id="chart-container2" class="chart-container2">
-                                <div id="chart-container3" class="chart-container3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-info-r">
-                        <ul>
-                            <li>紧急 <div></div><i>20%</i>，<span>30000件</span></li>
-                            <li>重要 <div></div><i>30%</i>，<span>45000件</span></li>
-                            <li>宽和 <div></div><i>50%</i>，<span>75000件</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="order-title">
-                    <h3>status1:</h3>
-                    <p>总订单量 <span>15000件</span></p>
-                </div>
-                <div class="order-info">
-                    <div  class="meters">
-                        <div id="chart-container4" class="chart-container1">
-                            <div id="chart-container5" class="chart-container2">
-                                <div id="chart-container6" class="chart-container3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-info-r">
-                        <ul>
-                            <li>紧急 <div></div><i>20%</i>，<span>30000件</span></li>
-                            <li>重要 <div></div><i>30%</i>，<span>45000件</span></li>
-                            <li>宽和 <div></div><i>50%</i>，<span>75000件</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-
+        <ul id="orderListInfo">
+            <!--模板数据填充-->
         </ul>
         <div class="order-query">
             <a href="order-details.html">查看详情所有订单</a>
@@ -75,6 +34,8 @@
 <script type="text/javascript" src="../../public/lib/weui+/picker.js"></script>
 <script type="text/javascript" src="../../public/js/order-status.js"></script>
 <script type="text/javascript" src="../../public/js/datePicker.js"></script>
+
+
 
 
 </body>

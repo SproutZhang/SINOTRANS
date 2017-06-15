@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>订单详情</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/order-details.css">
 
 </head>
@@ -13,49 +15,29 @@
         <div class="order-query">
             <a href="#"></a>
             <input type="text" placeholder="请输入要查询的订单">
-            <span></span>
+            <span id="orderQuery"></span>
         </div>
 
         <div class="order-status">
             <ul>
-                <li><a href="#">Vendor Booking</a></li>
-                <li><a href="#">Delivery Notice</a></li>
-                <li><a href="#">.Delivery Arrival </a></li>
-                <li><a href="#">仓库收货</a></li>
-                <li><a href="#">集装箱装箱</a></li>
+                <li><a href="#">预约</a></li>
+                <li><a href="#">送货</a></li>
+                <li><a href="#">到仓</a></li>
+                <li><a href="#">收货</a></li>
+                <li><a href="#">订舱</a></li>
+                <li><a href="#">装箱</a></li>
+                <li><a href="#">发运</a></li>
             </ul>
         </div>
         <div class="order-status-info">
-            <ul>
-                <li>
-                    <h3>编号：<span>31452346</span></h3>
-                    <div id="status1"><span></span><i></i><img src="../../public/images/yes.png" alt=""></div>
-                    <div id="status2"><span></span><i></i><img src="../../public/images/yes.png" alt=""></div>
-                    <div id="status3"><span></span><i></i><img src="../../public/images/yes.png" alt=""></div>
-                    <div id="status4"><span></span><i></i><img src="../../public/images/yes.png" alt=""></div>
-                    <div id="status5"><span></span><i></i><img src="../../public/images/yes.png" alt=""></div>
-                </li>
-                <li>
-                    <h3>编号：<span>31452347</span></h3>
-                </li>
-                <li>
-                    <h3>编号：<span>31452348</span></h3>
-                </li>
-                <li>
-                    <h3>编号：<span>31452349</span></h3>
-                </li>
-                <li>
-                    <h3>编号：<span>31452350</span></h3>
-                </li>
-                <li>
-                    <h3>编号：<span>31452350</span></h3>
-                </li>
-                <li>
-                    <h3>编号：<span>31452350</span></h3>
-                </li>
+            <ul id="orderDetailsShow">
+                <!--挖个坑-->
             </ul>
         </div>
     </div>
+    <script type="text/javascript" src="../../public/lib/weui+/zepto.min.js"></script>
+    <script type="text/javascript" src="../../public/lib/weui+/picker.js"></script>
+    <script src="../../public/js/order-details.js"></script>
 
 
 </body>

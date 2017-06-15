@@ -9,22 +9,46 @@
     border-radius: 4px;
     box-shadow: 0 1px 1px #ccc;
     padding-top: 0.2rem;
+    position: relative;
 }
 
 .order-date input{
-    width: 47%;
+    width: 42%;
     height: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 2px;
     padding-left: 0.6rem;
     margin-left: 0.1rem;
+    z-index:4;
 }
 .order-date input:first-child{
     background:url("../images/date01.png") no-repeat 0.1rem;
 }
-.order-date input:last-child{
+.order-date input:nth-child(2){
     background:url("../images/date02.png") no-repeat 0.1rem;
 }
+.order-date img{
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+}
+/*.animation{
+    -webkit-animation:spin 1s linear infinite;
+    -o-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+
+}*/
 
 .data-sheet{
     width: 100%;
@@ -121,6 +145,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
+    z-index: 3;
 }
 .order-query a{
     display: block;
@@ -135,6 +160,9 @@
 }
 
 /*日期插件样式调试*/
+.weui-picker-container{
+    z-index:9999;
+}
 .weui-picker-modal{
     height: 208px;
 }

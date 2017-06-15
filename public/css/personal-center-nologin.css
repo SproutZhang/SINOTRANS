@@ -1,0 +1,98 @@
+body{
+    color: #666;
+}
+.personal-c{
+    width: 100%;
+    height: 3.5rem;
+    background-color: #495784;
+    padding-right: 0.2rem;
+}
+.personal-c a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: url("../../public/images/right.png") no-repeat right;
+    background-size: 10% 15%;
+
+}
+.personal-c a img{
+    display:block;
+    width: 20%;
+    height: 1.5rem;
+    border-radius: 50% ;
+    margin: 0.8rem 0.5rem;
+    background-color: #fff;
+
+}
+.personal-c a h3{
+    font-size: 0.4rem;
+    color: #fff;
+    position: absolute;
+    left: 2.2rem;
+    top: 1rem;
+    font-weight: 400;
+}
+.personal-c a p{
+    position: absolute;
+    left: 2.2rem;
+    top: 1.7rem;
+    color: #fff;
+}
+
+
+/*列表选项*/
+.personal-lists{
+    width: 100%;
+    padding: 0.1rem;
+    margin-top: 0.2rem;
+}
+.personal-lists dl{
+    background-color: #fff;
+    padding: 0.2rem;
+}
+.personal-lists dl dt{
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+.personal-lists dl dd{
+    width: 100%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    border-bottom:1px solid #e0e0e0;
+}
+.personal-lists ul li{
+    width: 100%;
+    height: 1rem;
+    background-color: #fff;
+    margin-top: 0.1rem;
+    position: relative;
+    margin-top: 0.2rem;
+}
+
+.personal-lists ul li{
+    background: url("../images/icon10.png") no-repeat 0.2rem 0.3rem;
+    background-color: #fff;
+}
+.personal-lists ul li a{
+    color: #666;
+    display: inline-block;
+    width:80%;
+    height: 1rem;
+    line-height: 1rem;
+    padding-left: 0.8rem;
+}
+.personal-lists ul li i{
+    display: inline-block;
+    width: 0.3rem;
+    height: 0.35rem;
+    background-color: pink;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.32rem;
+    background: url("../images/arrow.png") no-repeat;
+    -webkit-background-size:100% 100%;
+    background-size:100% 100%;
+}
+

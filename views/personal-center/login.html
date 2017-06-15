@@ -4,33 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>登录</title>
-    <link rel="stylesheet" href="../public/css/base.css">
-    <link rel="stylesheet" href="../public/css/login.css">
+    <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/css/login.css">
 
 </head>
 <body>
     <div class="layout">
         <div class="login-face">
-            欢迎登录
+            <img src="../../public/images/car.gif" alt="">
         </div>
         <div class="login-cont">
             <form>
                 <ul>
                     <li>
-                        <label for="">用户名：</label>
-                        <input type="text" name="name" class="name">
+                        <input type="text" name="name" class="name" placeholder="用户名">
                     </li>
                     <li>
-                        <label for="">密码：</label>
-                        <input type="password" name="pass" class="pass">
+                        <input type="password" name="pass" class="pass" placeholder="密码">
                     </li>
                     <li>
-                        <label for="">验证手机：</label>
-                        <input type="text" name="mobile" class="mobile">
+                        <input type="text" name="mobile" class="mobile" placeholder="验证手机">
                     </li>
                     <li>
-                        <label for="">短信验证码：</label>
-                        <input type="text" name="code" class="code">
+                        <input type="text" name="code" class="code" placeholder="验证码">
                         <input type="button" value="获取验证码" class="verify" >
                     </li>
                     <li>
@@ -47,7 +43,7 @@
 
 
     </div>
-    <script src="../public/lib/zepto/zepto.min.js"></script>
+    <script src="../../public/lib/zepto/zepto.min.js"></script>
     <script>
         $(function(){
             $(".verify").on("click",function(){
@@ -75,7 +71,7 @@
                                     btn.val("获取验证码");
                                     return;
                                 }
-                                btn.val(second+"秒之后重新获取");
+                                btn.val(second+"秒后重新获取");
                             },1000)
                         }else{
                             //验证不通过，给用户提示
