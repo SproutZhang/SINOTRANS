@@ -29,25 +29,31 @@
     <div class="layout">
         <div class="locale-car-query">
             <a href="#"></a>
-            <input type="text" placeholder="请输入要查询的DN/TPL号">
-            <span></span>
+            <input type="text" placeholder="请输入要查询的DN/TPL号" id="inputQuery">
+            <span id="queryOrder"></span>
         </div>
         <!--选择查看仓库-->
         <div class="select-warehouse" onclick="selectmenu('1');">
-                请选择要查看的仓库
-                <span></span>
+                <i id="replaceInfo">选择要查看的仓库</i>
+                <span id="selectInfo"></span>
                 <a id="cell_1" class="icon icon-74 f20 f-gray"></a>
             </div>
         <div class="warehouse" id="menu_1" style="display: none;">
-                <ul class="clearfix">
+                <ul class="clearfix" id="searchHouse">
                     <li>
                         <h3>上海</h3>
+                        <a href="javascript:;">外高桥保税仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
+                        <a href="javascript:;">外高桥保税仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
                         <a href="javascript:;">外高桥保税仓库</a>
                         <a href="javascript:;">洋山仓库</a>
                     </li>
                     <li>
                         <h3>宁波</h3>
                         <a href="javascript:;">宁波仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
+                        <a href="javascript:;">洋山仓库</a>
                         <a href="javascript:;">洋山仓库</a>
                         <a href="javascript:;">洋山仓库</a>
                     </li>
@@ -73,33 +79,84 @@
 
 
         <!--查询结果-->
-        <div class="query-results">
-            <h3>查询结果</h3>
-            <ul>
-                <li>预约时段：<span>2017年5月17日  09：00-10:00</span></li>
-                <li>实际到达：<span>2017年5月17日  09：00-10:00</span></li>
-                <li>到达状态：<span> 准时</span></li>
-            </ul>
+        <div id="queryResults">
+
         </div>
-        <!--排队数量-->
-        <div class="carlist-num">
-            <img src="../../public/images/locale.png" alt="">
-            <p>当前排队数量： <strong>18</strong>辆车</p>
-        </div>
+
     </div>
     <script>
         $(function(){
-           //1.获取所有id为menu_1下面的ul下面的li下面的a
-            //2.点击后class为select-warehouse的内容变为当前选择,下拉列表为隐藏
-            //3.把span标签里的内容填上当前选择的内容，设置属性padding: 0.05rem 0.8rem;
 
-            var menu = $("#menu_1");
-            var menuUl = menu.find("ul");
-            console.log(menuUl);
-            var menuUlLi = menuUl.find("li");
-            console.log(menuUlLi);
-            for( var i=0;i<menuUlLi.length; i++){
-                menuUlLi[i]
+
+
+            var aObj = $("#searchHouse").find("a");
+            aObj.each(function(){
+                $(this).on('click',function(){
+                    $("#menu_1").hide();
+                    $("#replaceInfo").html("当前查看：");
+                    $("#selectInfo").html($(this).html()).show();
+
+                });
+
+            });
+
+            $("#queryOrder").click(function(){
+                var val =$("#inputQuery").val();
+                var sle = $("#selectInfo").html();
+                if(val == "" && sle== ""){
+                    $.alert("请输入或选择查询条件");
+                    return;
+                }else{
+                    queryCars();
+                }
+
+
+            });
+
+            function queryCars(){
+                $.showLoading();
+                $.ajax({
+                    type : "get",
+                    url : "../../json/locale-cars.json?t="+new Date(),
+                    dataType : "json",
+                    success : function(data){
+                        $(data.list).each(function(index,obj){
+                            $("#queryResults").empty();
+                            var html = $("<div class='query-results'>"+
+                            "<h3>查询结果</h3>"+
+                            "<ul>"+
+                            "<li>预约时段：<span>"+obj.time+"</span></li>"+
+                            "<li>实际到达：<span>"+obj.arrive+"</span></li>"+
+                            "<li>到达状态：<span class='order-s'>"+obj.status+"</span></li>"+
+                            "</ul>"+
+                            "</div>"+
+                            "<div class='carlist-num'>"+
+                                    "<img src='../../public/images/locale.png'>"+
+                                    "<p>当前排队数量： <strong>"+obj.num+"</strong>辆车</p>"+
+                            "</div>");
+
+
+                            $("#queryResults").append(html);
+
+                        });
+                        $.hideLoading();
+
+                        if($(".order-s").html() == "准时"){
+                            $(".order-s").css("background","green");
+
+                        }else if($(".order-s").html() == "延误"){
+
+                            $(".order-s").css("background","red");
+                        }
+
+                    },
+                    error:function(){
+                        $.hideLoading();
+                        $.toast("数据加载失败", "cancel");
+                    }
+
+                });
+
             }
 
         });

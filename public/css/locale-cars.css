@@ -1,9 +1,12 @@
 /*公共提取*/
 .layout{
     padding: 0.2rem;
+
 }
 body{
     color:#9d9d9d;
+    background: url("../../public/images/ship.png") no-repeat center;
+    background-color: #eee;
 }
 .locale-car-query,.select-warehouse,.query-results,.carlist-num,.warehouse{
     border-radius: 4px;
@@ -36,6 +39,7 @@ body{
     height: 0.4rem;
     border-left: 2px solid #999;
     background: url("../images/search.png") no-repeat 0.2rem;
+    background-size: 0.4rem 0.4rem;
     position: absolute;
     right: 0.1rem;
     top: 0.15rem;
@@ -49,10 +53,16 @@ body{
     position: relative;
     
 }
+.select-warehouse i{
+    padding-right: 0.2rem;
+    font-style: normal;
+}
 .select-warehouse span{
     color: #fff;
     background-color: #ccc;
-    border-radius: 10px;
+    border-radius: 20px;
+    padding: 0.1rem 0.6rem;
+    display: none;
 }
 .select-warehouse a{
     width: 10%;

@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>在线预约</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/reservation-online.css">
+
 
 </head>
 <body>
     <div class="layout">
         <div class="appointment-query">
             <div class="appointment-query-in">
-                <a></a>
+                <a id="queryOnline"></a>
                 <input type="text" placeholder="请输入要查询的DN号">
             </div>
         </div>
@@ -24,86 +27,8 @@
             </ul>
         </div>
         <div class="appointment-info">
-            <ul>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>DN号：DN18153674</strong></p>
-                        <p>集货交期：<span>2017-05-15</span></p>
-                        <p>仓库：<span>shanghai</span></p>
-                    </div>
-                    <div class="info-r fl">
-                        <p>供应商：<span>EA line</span></p>
-                        <p>预约时段：<span>2017-05-15 8:00-9:00</span></p>
-                        <p>状态：<span>open</span></p>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>DN号：DN18153674</strong></p>
-                        <p>集货交期：<span>2017-05-15</span></p>
-                        <p>仓库：<span>shanghai</span></p>
-                    </div>
-                    <div class="info-r fl">
-                        <p>供应商：<span>EA line</span></p>
-                        <p>预约时段：<span>2017-05-15 8:00-9:00</span></p>
-                        <p>状态：<span>open</span></p>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>DN号：DN18153674</strong></p>
-                        <p>集货交期：<span>2017-05-15</span></p>
-                        <p>仓库：<span>shanghai</span></p>
-                    </div>
-                    <div class="info-r fl">
-                        <p>供应商：<span>EA line</span></p>
-                        <p>预约时段：<span>2017-05-15 8:00-9:00</span></p>
-                        <p>状态：<span>open</span></p>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>DN号：DN18153674</strong></p>
-                        <p>集货交期：<span>2017-05-15</span></p>
-                        <p>仓库：<span>shanghai</span></p>
-                    </div>
-                    <div class="info-r fl">
-                        <p>供应商：<span>EA line</span></p>
-                        <p>预约时段：<span>2017-05-15 8:00-9:00</span></p>
-                        <p>状态：<span>open</span></p>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>DN号：DN18153674</strong></p>
-                        <p>集货交期：<span>2017-05-15</span></p>
-                        <p>仓库：<span>shanghai</span></p>
-                    </div>
-                    <div class="info-r fl">
-                        <p>供应商：<span>EA line</span></p>
-                        <p>预约时段：<span>2017-05-15 8:00-9:00</span></p>
-                        <p>状态：<span>open</span></p>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>DN号：DN18153674</strong></p>
-                        <p>集货交期：<span>2017-05-15</span></p>
-                        <p>仓库：<span>shanghai</span></p>
-                    </div>
-                    <div class="info-r fl">
-                        <p>供应商：<span>EA line</span></p>
-                        <p>预约时段：<span>2017-05-15 8:00-9:00</span></p>
-                        <p>状态：<span>open</span></p>
-                    </div>
-
-                </li>
-
+            <ul id="onlineData">
+                <!--坑-->
             </ul>
         </div>
         <div class="plus-appointment">
@@ -113,6 +38,10 @@
         </div>
 
     </div>
+
+    <script src="../../public/lib/weui+/zepto.min.js"></script>
+    <script src="../../public/js/reservation-online.js"></script>
+
 
 
 </body>

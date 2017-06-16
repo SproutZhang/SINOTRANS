@@ -23,7 +23,10 @@
             </ul>
         </div>
         <div class="select-apm-query">
-            <input type="submit" value="查询">
+            <a href="reservation-query-result.html">
+                <input type="submit" value="查询" id="submit">
+            </a>
+
         </div>
 
     </div>
@@ -104,7 +107,7 @@
             <li>外高桥保税仓库</li>
             <li>洋山仓库</li>
         </ul>
-        <input type="submit" value="确认">
+        <input type="submit" value="确认" >
     </div>
     <script type="text/javascript" src="../../public/lib/weui+/zepto.min.js"></script>
     <script type="text/javascript" src="../../public/lib/weui+/picker.js"></script>
@@ -124,6 +127,8 @@
             $(".close").click(function(){
                 $("#showMenu2").animate({"bottom":"-8rem"},500).removeClass("show");
             });
+
+
         });
     </script>
 
