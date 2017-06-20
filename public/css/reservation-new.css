@@ -24,15 +24,18 @@ body{
 }
 
 .select-appointment ul li span{
-    width: 0.5rem;
+    display:inline-block;
     height: 0.5rem;
-    background-color: pink;
+    line-height: 0.5rem;
     position: absolute;
-    right: 0;
+    left: 1.75rem;
     bottom: 0;
-    background: url("../images/down.png") no-repeat;
-    background-size: 60% 60%;
 
+}
+.select-appointment ul li a{
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.1rem;
 }
 .select-appointment ul li input[type="text"]{
     width: 100%;
@@ -46,11 +49,8 @@ body{
     left: 1.8rem;
     bottom: 0;
 }
-.select-appointment ul li:nth-child(7){
-    line-height: 1.2rem;
-}
 .select-appointment ul li:last-child{
-    border: none;
+    border-bottom: 2px solid #ccc;
     height: 1.5rem;
     line-height: 1.5rem;
 }
@@ -119,4 +119,16 @@ body{
 }
 .weui-picker-modal .picker-items{
     height: 172px;
+}
+
+/*下拉列表样式调整*/
+.warehouse ul li{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    border-bottom:1px solid #e0e0e0;
+    color: #ccc;
+}
+.warehouse ul li:last-child{
+    height: 0.8rem;
+    line-height: 0.8rem;
 }

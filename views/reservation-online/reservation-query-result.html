@@ -5,104 +5,41 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>新建预约</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/reservation-query-result.css">
 
 </head>
-<body>
+<body ontouchstart>
     <div class="layout">
         <div class="apm-query-result">
             <span>符合查询条件的结果</span>
         </div>
         <div class="query-result-info">
-            <ul>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>VOB号：vob001</strong></p>
-                        <p>物料号：<span>k66</span></p>
-                        <p>箱数：<span>500</span></p>
-                    </div>
-                    <div class="info-c fl">
-                        <p>PO号：<span>po123</span></p>
-                        <p>件数：<span>1000</span></p>
-                    </div>
-                    <div class="info-r fr">
-                        <span>-</span>
-                        <span>+</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>VOB号：vob001</strong></p>
-                        <p>物料号：<span>k66</span></p>
-                        <p>箱数：<span>500</span></p>
-                    </div>
-                    <div class="info-c fl">
-                        <p>PO号：<span>po123</span></p>
-                        <p>件数：<span>1000</span></p>
-                    </div>
-                    <div class="info-r fr">
-                        <span>+</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>VOB号：vob001</strong></p>
-                        <p>物料号：<span>k66</span></p>
-                        <p>箱数：<span>500</span></p>
-                    </div>
-                    <div class="info-c fl">
-                        <p>PO号：<span>po123</span></p>
-                        <p>件数：<span>1000</span></p>
-                    </div>
-                    <div class="info-r fr">
-                        <span>+</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>VOB号：vob001</strong></p>
-                        <p>物料号：<span>k66</span></p>
-                        <p>箱数：<span>500</span></p>
-                    </div>
-                    <div class="info-c fl">
-                        <p>PO号：<span>po123</span></p>
-                        <p>件数：<span>1000</span></p>
-                    </div>
-                    <div class="info-r fr">
-                        <span>+</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>VOB号：vob001</strong></p>
-                        <p>物料号：<span>k66</span></p>
-                        <p>箱数：<span>500</span></p>
-                    </div>
-                    <div class="info-c fl">
-                        <p>PO号：<span>po123</span></p>
-                        <p>件数：<span>1000</span></p>
-                    </div>
-                    <div class="info-r fr">
-                        <span>+</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="info-l fl">
-                        <p><strong>VOB号：vob001</strong></p>
-                        <p>物料号：<span>k66</span></p>
-                        <p>箱数：<span>500</span></p>
-                    </div>
-                    <div class="info-c fl">
-                        <p>PO号：<span>po123</span></p>
-                        <p>件数：<span>1000</span></p>
-                    </div>
-                    <div class="info-r fr">
-                        <span>+</span>
-                    </div>
-                </li>
+            <ul id="showBox">
+                <!--坑-->
             </ul>
         </div>
+        <div class="selected-list">
+            <div class="head-title">
+                <span id="hasSelected">已选择</span>
+                <span id="clearAll">清空</span>
+            </div>
+            <div class="selected-info">
+                <ul id="selectedShow">
+                    <!--坑-->
+                </ul>
+            </div>
+        </div>
+        <div class="J-shoping-title">
+            <i id="watch"></i>
+            <p>已选择 <span class="J-shoping-num"> 0 </span> 个</p>
+            <input type="submit" value="提交" id="submit">
+        </div>
+
     </div>
+    <script src="../../public/lib/weui+/zepto.min.js"></script>
+    <script type="text/javascript" src="../../public/js/reservation-query-result.js"></script>
 
 
 </body>

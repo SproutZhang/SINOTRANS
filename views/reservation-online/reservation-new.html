@@ -5,22 +5,114 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>新建预约</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/reservation-new.css">
+    <script>
+        function selectmenu(n){
+            var eleMore = document.getElementById("menu_"+n);
+            if(eleMore.style.display=="none"){
+                eleMore.style.display = 'block';
+                $("#cell_"+n).removeClass("icon-74");
+                $("#cell_"+n).addClass("icon-35 ");
+
+            }else{
+                eleMore.style.display = 'none';
+                $("#cell_"+n).removeClass("icon-35");
+                $("#cell_"+n).addClass("icon-74");
+
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
         <div class="select-appointment">
             <ul>
-                <li>起运港 <input type="text" class="input-box" id="portOfLoading"><span></span></li>
-                <li>中外运仓库<input type="text" class="input-box" id="zwyWarehouse"><span></span></li>
-                <li>集货交期 <input type="text" class="reservation-date"><span></span></li>
-                <li>目的港交期 <input type="text" class="reservation-date"><span></span></li>
-                <li>预约日期 <input type="text" class="reservation-date"><span></span></li>
-                <li>预约时段 <input type="text"  id="timeInterval"><span></span></li>
+                <li onclick="selectmenu('1');" class='la'>起运港：
+                    <span class="portOfLoading" ></span>
+                    <a id="cell_1" class="icon icon-74 f20 f-gray"></a>
+                </li>
+                <!--选择起运港-->
+                <div class="warehouse" id="menu_1" style="display: none;">
+                    <ul class="clearfix" id="searchHouse1">
+                        <!--<li>上海</li>
+                        <li>宁波</li>
+                        <li>深圳</li>
+                        <li>北京</li>
+                        <li>广东</li>
+                        <li>天津</li>
+                        <li>厦门</li>-->
+                    </ul>
+                </div>
+                <li onclick="selectmenu('2');">中外运仓库：
+                    <span  class="zwyWarehouse"></span>
+                    <a id="cell_2" class="icon icon-74 f20 f-gray"></a>
+                </li>
+                <!--选择仓库-->
+                <div class="warehouse" id="menu_2" style="display: none;">
+                    <ul class="clearfix" id="searchHouse2">
+                        <!--<li>上海仓库</li>
+                        <li>宁波仓库</li>
+                        <li>深圳仓库</li>-->
+                    </ul>
+                </div>
+                <li onclick="selectmenu('3');">集货交期：
+                    <span class="date1"></span>
+                    <a id="cell_3" class="icon icon-74 f20 f-gray"></a>
+                </li>
+                <!--选择集货交期-->
+                <div class="warehouse" id="menu_3" style="display: none;">
+                    <ul class="clearfix" id="searchHouse3">
+                        <!--<li>2017-05-12</li>
+                        <li>2017-05-12</li>
+                        <li>2017-05-12</li>-->
+                    </ul>
+                </div>
+
+                <li onclick="selectmenu('4');">目的港交期：
+                    <span class="date2"></span>
+                    <a id="cell_4" class="icon icon-74 f20 f-gray"></a>
+                </li>
+                <!--选择目的港交期-->
+                <div class="warehouse" id="menu_4" style="display: none;">
+                    <ul class="clearfix" id="searchHouse4">
+                        <!--<li>2017-05-12</li>
+                        <li>2017-05-12</li>
+                        <li>2017-05-12</li>-->
+                    </ul>
+                </div>
+
+
+                <li onclick="selectmenu('5');">预约日期：
+                    <span class="date3"></span>
+                    <a id="cell_5" class="icon icon-74 f20 f-gray"></a>
+                </li>
+                <!--选择预约日期-->
+                <div class="warehouse" id="menu_5" style="display: none;">
+                    <ul class="clearfix" id="searchHouse5">
+                        <!--<li>2017-05-12</li>
+                        <li>2017-05-12</li>
+                        <li>2017-05-12</li>-->
+                    </ul>
+                </div>
+                <li onclick="selectmenu('6');">预约时段：
+                    <span class="date4"></span>
+                    <a id="cell_6" class="icon icon-74 f20 f-gray"></a>
+                </li>
+                <!--选择预约时段-->
+                <div class="warehouse" id="menu_6" style="display: none;">
+                    <ul class="clearfix" id="searchHouse6">
+                        <!--<li>10:00-11:00</li>
+                        <li>10:00-11:00</li>
+                        <li>10:00-11:00</li>-->
+                    </ul>
+                </div>
                 <li><input type="text" placeholder="备注"></li>
-                <li><input type="checkbox"> 是否接受排队等待</li>
-            </ul>
+
+            </ul><br/>
+            <input type="checkbox"> 是否接受排队等待<br/><br/>
+            <input type="checkbox"> 是否task订单
         </div>
         <div class="select-apm-query">
             <a href="reservation-query-result.html">
@@ -30,107 +122,9 @@
         </div>
 
     </div>
-    <div class="port-of-loading hide" id="showMenu1">
-        <div class="close">
-            X
-        </div>
-        <ul>
-            <li>上海</li>
-            <li>宁波</li>
-            <li>深圳</li>
-            <li>天津</li>
-            <li>青岛</li>
-            <li>厦门</li>
-        </ul>
-
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-
-        <input type="submit" value="确认">
-    </div>
-    <div class="zwy-warehouse hide" id="showMenu2">
-        <div class="close">
-            X
-        </div>
-        <ul>
-            <li>上海</li>
-            <li>宁波</li>
-            <li>深圳</li>
-            <li>天津</li>
-            <li>青岛</li>
-            <li>厦门</li>
-        </ul>
-
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <ul>
-            <li>外高桥保税仓库</li>
-            <li>洋山仓库</li>
-        </ul>
-        <input type="submit" value="确认" >
-    </div>
     <script type="text/javascript" src="../../public/lib/weui+/zepto.min.js"></script>
     <script type="text/javascript" src="../../public/lib/weui+/picker.js"></script>
-    <script type="text/javascript" src="../../public/js/datePicker.js"></script>
-    <script>
-        $(function(){
-           $("#portOfLoading").click(function(){
-               $("#showMenu1").addClass("show").animate({"bottom":0},500);
-           });
-            $(".close").click(function(){
-                $("#showMenu1").animate({"bottom":"-8rem"},500).removeClass("show");
-            });
-
-            $("#zwyWarehouse").click(function(){
-                $("#showMenu2").addClass("show").animate({"bottom":0},500);
-            });
-            $(".close").click(function(){
-                $("#showMenu2").animate({"bottom":"-8rem"},500).removeClass("show");
-            });
-
-
-        });
-    </script>
+    <script type="text/javascript" src="../../public/js/reservation-new.js"></script>
 
 
 </body>

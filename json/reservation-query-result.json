@@ -1,0 +1,68 @@
+{
+  "list": [
+    {
+      "VOBnum": "VOB123455",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB222222",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB33333",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB44445",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB55555",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB166655",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB177755",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB8888",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    },
+    {
+      "VOBnum": "VOB99999",
+      "goodsNum" : "k66858455",
+      "boxNum": "500",
+      "POnum":"po123",
+      "number":"1000"
+    }
+
+  ]
+}

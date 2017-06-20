@@ -11,26 +11,29 @@
 
 
 </head>
-<body>
+<body ontouchstart>
     <div class="layout">
         <div class="appointment-query">
             <div class="appointment-query-in">
                 <a id="queryOnline"></a>
-                <input type="text" placeholder="请输入要查询的DN号">
+                <input type="text" placeholder="请输入要查询的DN号" id="queryOnlineNum">
             </div>
         </div>
-        <div class="appointment-status">
-            <ul>
-                <li><a>全部</a></li>
-                <li><a>已提交</a></li>
-                <li><a>未提交</a></li>
+        <div class="appointment-status weui_tab" style="height:0.6rem;" id="tab3">
+            <ul class="weui_navbar" style="height:0.6rem;">
+                <li class="weui_navbar_item " id="all">全部</li>
+                <li class="weui_navbar_item " id="push">已提交</li>
+                <li class="weui_navbar_item " id="noPush">未提交</li>
             </ul>
         </div>
         <div class="appointment-info">
             <ul id="onlineData">
                 <!--坑-->
             </ul>
+
         </div>
+        <div class="btn"></div>
+
         <div class="plus-appointment">
             <a href="reservation-new.html">
                 + 我要预约
@@ -40,6 +43,8 @@
     </div>
 
     <script src="../../public/lib/weui+/zepto.min.js"></script>
+    <script src="../../public/lib/weui+/updown.js"></script>
+    <script src="../../public/lib/weui+/lazyimg.js"></script>
     <script src="../../public/js/reservation-online.js"></script>
 
 

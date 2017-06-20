@@ -11,23 +11,56 @@
 <div class="layout">
     <!--个人中心-->
     <div class="personal-c">
-        <a href="personal-center.html"><img src="../../public/images/headicon.jpeg" alt="头像"></a>
-        <span class="username">username</span>
+        <a>
+            <img src="../../public/images/headicon.jpeg" alt="头像">
+            <h3></h3>
+            <p>18211110222</p>
+        </a>
+    </div>
+    <div class="my-lists">
+        <ul>
+            <li>
+                <a href="my-reservation.html">
+                    <span id="myReservation">8</span>
+                    <p>我的预约</p>
+                </a>
+            </li>
+            <li>
+                <a href="my-carLists.html">
+                    <span id="myCarLists">15</span>
+                    <p>我的装车单</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span id="myPoint">2145</span>
+                    <p>我的积分</p>
+                </a>
+            </li>
+        </ul>
     </div>
     <!--列表选项-->
     <div class="personal-lists">
+        <dl>
+            <dt>使用帮助</dt>
+            <dd><a href="using-help.html">如何在线预约DN？</a></dd>
+            <dd><a href="using-help.html">如何在线创作TLP？</a></dd>
+            <dd><a href="using-help.html">如何查看承运商车辆行驶轨迹？</a></dd>
+            <dd><a href="using-help.html">积分规则</a></dd>
+            <dd></dd>
+        </dl>
         <ul>
-            <li><a href="#">我的预约（<span>2</span>）<i></i></a></li>
-            <li><a href="#">我的装车单（<span>26</span>）<i></i></a></li>
-            <li><a href="using-help.html">使用帮助<i></i></a></li>
-            <li><a href="#">关注中外运<i></i></a></li>
-
+            <li><a href="#">扫码关注中外运<i></i></a></li>
         </ul>
 
     </div>
+
     <!--退出按钮-->
     <div class="personal-quit">
-        <input type="button" value="退出登录">
+        <a href="personal-center-nologin.html">
+            <input type="button" value="退出登录">
+        </a>
+
     </div>
 </div>
 </body>

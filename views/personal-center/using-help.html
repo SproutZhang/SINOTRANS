@@ -5,35 +5,52 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>使用帮助</title>
     <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/using-help.css">
 </head>
 <body>
     <div class="layout">
         <div class="using-help">
-            <ul>
-                <li>
-                    <i>1</i>
-                    <h3>如何在线预约DN？</h3>
-                    <p>承载中国全球经济化使命，整合有事资源，打造以航运、综合物流及相关金融服务为支柱，多产业集群、全球领先的综合性物</p>
-                </li>
-                <li>
-                    <i>2</i>
-                    <h3>如何在线预约DN？</h3>
-                    <p>承载中国全球经济化使命，整合有事资源，打造以航运、综合物流及相关金融服务为支柱，多产业集群、全球领先的综合性物流供应链服务集团。多产业集群、全球领先的综合性物流供应链服务集团流供应链服务集团。多产业集群、全球领先的综合性物流供应链服务集团流供应链服务集团。多产业集群、全球领先的综合性物流供应链服务集团</p>
-                </li>
-                <li>
-                    <i>3</i>
-                    <h3>如何在线预约DN？</h3>
-                    <p>承载中国全球经济化使命，整合有事资源，打造以航运、综合物流及相关金融服务为支柱，多产业集群、全球领先的综合性物流供应链服务集团。多产业集群、全球领先的综合性物流供应链服务集团</p>
-                </li>
-                <li>
-                    <i>4</i>
-                    <h3>如何在线预约DN？</h3>
-                    <p>承载中国全球经济化使命，整合有事资源，打造以航运、综合物流及相关金融服务为支柱，多产业集群、全球领先的综合性物流供应链服务集团。多产业集群、全球领先的综合性物流供应链服务集团</p>
-                </li>
+            <ul id="showHelp">
+
             </ul>
         </div>
     </div>
+    <script src="../../public/lib/weui+/zepto.min.js"></script>
+    <script>
+        $(function(){
+            usingHelp();
+           function usingHelp(){
+               $.showLoading();
+                $.ajax({
+                    type:'get',
+                    url:'../../json/using-help.json',
+                    dataType:'json',
+                    success:function(data){
+                       var showHelp =  $("#showHelp");
+                        showHelp.empty();
+                        $(data.list).each(function(index,obj){
+                            var html = $("<li>"+
+                                    "<i>"+ ++index +"</i>"+
+                                    "<h3>"+obj.title+"</h3>"+
+                            "<p>"+obj.cont+"</p>"+
+                            "</li>");
+                            showHelp.append(html);
+                            $.hideLoading();
+                        });
+
+                    },
+                    error:function(){
+                        $.hideLoading();
+                        $.toast("数据加载失败", "cancel");
+                    }
+
+                });
+           }
+        });
+    </script>
+
 
 
 </body>

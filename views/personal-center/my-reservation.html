@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>我的预约</title>
+    <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
+    <link rel="stylesheet" href="../../public/css/reservation-query-result.css">
+
+</head>
+<body ontouchstart>
+<div class="layout">
+    <div class="apm-query-result">
+        <span>我的预约</span>
+    </div>
+    <div class="query-result-info">
+        <ul id="showBox">
+            <!--坑-->
+        </ul>
+    </div>
+</div>
+<script src="../../public/lib/weui+/zepto.min.js"></script>
+<script>
+    $(function(){
+        queryResult();
+        function queryResult(){
+            $.showLoading();
+            $.ajax({
+                type:'get',
+                url:'../../json/reservation-query-result.json',
+                dataType:'json',
+                success:function(data){
+                    var showBox = $("#showBox");
+
+                    $(data.list).each(function(index,obj){
+                        var html = $("<li>"+
+                                "<div class='info-l fl'>"+
+                                "<p><strong>VOB号："+obj.VOBnum+"</strong></p>"+
+                                "<p>物料号：<span>"+obj.goodsNum+"</span></p>"+
+                                "<p>箱数：<span>"+obj.boxNum+"</span></p>"+
+                                "</div>"+
+                                "<div class='info-c fl'>"+
+                                "<p>PO号：<span>"+obj.POnum+"</span></p>"+
+                                "<p>件数：<span>"+obj.number+"</span></p>"+
+                                "</div>"+
+                                "<div class='info-r fr'>"+
+                                "</div>"+
+                                "</li>");
+
+                        showBox.append(html);
+                        $.hideLoading();
+                    });
+                },error: function(){
+                    $.hideLoading();
+                    $.toast("数据加载失败", "cancel");
+                }
+            });
+        }
+
+    });
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
