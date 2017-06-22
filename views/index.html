@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../public/css/index.css">
 </head>
 <body ontouchstart>
+    <input type="hidden" id="info" value="11">
     <div class="layout">
         <header class="bgc top-bar">
             <a href="personal-center/personal-center.html" class="headicon"><img src="../public/images/headicon.jpeg" alt=""></a>
@@ -58,22 +59,33 @@
         <!--下面的菜单-->
         <div class="menu mb">
             <ul>
-                <li><a href="reservation-online/reservation-online.html"><span class="icon04"></span><p>在线预约</p></a></li>
+                <li id="resvOnline"><a><span class="icon04"></span><p>在线预约</p></a></li>
                 <li><a href="cars-list/cars-list.html"><span class="icon05"></span><p>装车单</p></a></li>
                 <li><a href="cars-map/"><span class="icon06"></span><p>车辆地图</p></a></li>
             </ul>
         </div>
         <!--底部-->
-        <footer class="footer">
-           <!-- <ul>
-                <li><a href="#"><span class="fa fa-paper-plane"></span><p>公告信息</p></a></li>
-                <li><a href="#"><span class="fa fa-dot-circle-o"></span><p>更多内容</p></a></li>
-                <li><a href="#"><span class="fa fa-user"></span><p>个人中心</p></a></li>
-            </ul>-->
-        </footer>
+        <footer class="footer"></footer>
     </div>
     <script src="../public/lib/weui+/zepto.min.js"></script>
     <script src="../public/lib/weui+/swipe.js"></script>
     <script src="../public/js/swiper.js"></script>
+    <script>
+        $("#resvOnline").click(function(){
+           if($("#info").val()!=''){
+               location.href = 'reservation-online/reservation-online.html';
+           } else{
+               $.confirm("您还未登录，要去登录吗?", "确认登录?", function() {
+                   location.href = 'personal-center/login.html';
+               }, function() {
+                   //取消操作
+               });
+
+
+           }
+        });
+
+
+    </script>
 </body>
 </html>

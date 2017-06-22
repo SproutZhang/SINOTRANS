@@ -8,16 +8,30 @@
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/order-status.css">
+    <link rel="stylesheet" href="../../public/lib/font-awesome/css/font-awesome.min.css">
     <script src="../../public/lib/RGraph/libraries/RGraph.svg.common.core.js"></script>
     <script src="../../public/lib/RGraph/libraries/RGraph.svg.hbar.js"></script>
     <script src="../../public/lib/RGraph/libraries/RGraph.svg.pie.js"></script>
 </head>
 <body ontouchstart>
 <div class="layout">
-    <div class="order-date">
-        <input type="text" placeholder="起始日期" id="dateStart" value="2017-05-14">
-        <input type="text" placeholder="终止日期" id="dateEnd" value="2017-06-14">
-        <img src="../../public/images/search.png" alt="" id="showLoading" >
+    <div class="order-date clearfix">
+        <div class="input-group">
+            <span class="first-date">集货交期：</span><input class="date-seleted" type="text" placeholder="起始日期" id="dateStart" value="2017-05-14">
+        </div>
+        <div class="input-group">
+            <span class="last-date">终止日期：</span><input class="date-seleted" type="text" placeholder="终止日期" id="dateEnd" value="2017-06-14">
+        </div>
+        <button type="button" class="btn btn-clear" id="clearDate">
+            <i class="fa fa-trash-o"></i>
+            清空
+        </button>
+        <button type="button" class="btn btn-search" id="showLoading">
+            <i class="fa fa-search"></i>
+            搜索
+        </button>
+
+
     </div>
 
     <!--数据表-->
@@ -26,7 +40,7 @@
             <!--模板数据填充-->
         </ul>
         <div class="order-query">
-            <a href="order-details.html">查看详情所有订单</a>
+            <a href="order-details.html">查看订单详情</a>
         </div>
     </div>
 </div>

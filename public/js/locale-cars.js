@@ -2,6 +2,13 @@
  * Created by john on 2017/6/16.
  */
 $(function(){
+
+    /*清空*/
+    $("#clearALL").on("click",function(){
+       $("#inputQuery").val('');
+        $("#firstHouse").attr('selected','selected');
+    });
+    
     
 
     var aObj = $("#searchHouse").find("a");
@@ -47,7 +54,7 @@ $(function(){
                         "</ul>"+
                         "</div>"+
                         "<div class='carlist-num'>"+
-                        "<img src='../../public/images/locale.png'>"+
+                        "<img src='../../public/images/house.png'>"+
                         "<p>当前排队数量： <strong>"+obj.num+"</strong>辆车</p>"+
                         "</div>");
 
@@ -62,7 +69,7 @@ $(function(){
 
                 }else if($(".order-s").html() == "延误"){
 
-                    $(".order-s").css("background","red");
+                    $(".order-s").css("background","#d9534f");
                 }
 
             },

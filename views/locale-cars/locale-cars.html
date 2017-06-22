@@ -8,74 +8,59 @@
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/locale-cars.css">
-    <script>
-        function selectmenu(n){
-            var eleMore = document.getElementById("menu_"+n);
-            if(eleMore.style.display=="none"){
-                eleMore.style.display = 'block';
-                $("#cell_"+n).removeClass("icon-74");
-                $("#cell_"+n).addClass("icon-35 ");
-            }else{
-                eleMore.style.display = 'none';
-                $("#cell_"+n).removeClass("icon-35");
-                $("#cell_"+n).addClass("icon-74");
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="../../public/lib/font-awesome/css/font-awesome.min.css">
 
 </head>
 <body ontouchstart>
     <div class="layout">
         <div class="locale-car-query">
-            <a href="javascript:;"></a>
             <input type="text" placeholder="请输入要查询的DN/TPL号" id="inputQuery">
-            <span id="queryOrder"></span>
+            <a href="javascript:;"></a>
+            <!--<span id="queryOrder"></span>-->
         </div>
         <!--选择查看仓库-->
-        <div class="select-warehouse" onclick="selectmenu('1');">
-                <i id="replaceInfo">选择要查看的仓库</i>
-                <span id="selectInfo"></span>
-                <a id="cell_1" class="icon icon-74 f20 f-gray"></a>
+        <div class="select-warehouse">
+            <span>请选择仓库：</span><select name="" id="selectedHouse">
+            <option id="firstHouse">选择仓库</option>
+                <optgroup label="上海">
+                    <option value="">外高桥保税仓库</option>
+                    <option value="">洋山仓库</option>
+                    <option value="">外高桥保税仓库</option>
+                    <option value="">上海仓库</option>
+                    <option value="">上海仓库</option>
+                </optgroup>
+                <optgroup label="宁波">
+                    <option value="">宁波仓库</option>
+                    <option value="">上海仓库</option>
+                    <option value="">上海仓库</option>
+                    <option value="">上海仓库</option>
+                </optgroup>
+                <optgroup label="深圳">
+                    <option value="">深圳仓库</option>
+                    <option value="">洋山仓库</option>
+                </optgroup>
+                <optgroup label="天津">
+                    <option value="">天津仓库</option>
+                </optgroup>
+                <optgroup label="青岛">
+                    <option value="">青岛仓库</option>
+                </optgroup>
+                <optgroup label="厦门">
+                    <option value="">厦门仓库</option>
+                </optgroup>
+            </select>
         </div>
-        <div class="warehouse" id="menu_1" style="display: none;">
-                <ul class="clearfix" id="searchHouse">
-                    <li>
-                        <h3>上海</h3>
-                        <a href="javascript:;">外高桥保税仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                        <a href="javascript:;">外高桥保税仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                        <a href="javascript:;">外高桥保税仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                    </li>
-                    <li>
-                        <h3>宁波</h3>
-                        <a href="javascript:;">宁波仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                    </li>
-                    <li>
-                        <h3>深圳</h3>
-                        <a href="javascript:;">深圳仓库</a>
-                        <a href="javascript:;">洋山仓库</a>
-                    </li>
-                    <li>
-                        <h3>天津</h3>
-                        <a href="javascript:;">天津仓库</a>
-                    </li>
-                    <li>
-                        <h3>青岛</h3>
-                        <a href="javascript:;">青岛仓库</a>
-                    </li>
-                    <li>
-                        <h3>厦门</h3>
-                        <a href="javascript:;">厦门仓库</a>
-                    </li>
-                </ul>
-            </div>
 
+        <div class="btn-l">
+            <button type="button" class="btn btn-clear" id="clearALL">
+                <i class="fa fa-trash-o"></i>
+                清空
+            </button>
+            <button type="button" class="btn btn-search" id="queryOrder">
+                <i class="fa fa-search"></i>
+                搜索
+            </button>
+        </div>
 
         <!--查询结果-->
         <div id="queryResults">

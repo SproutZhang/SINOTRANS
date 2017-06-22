@@ -3,6 +3,11 @@
  */
 $(function(){
 
+    /*清空*/
+    $("#clearDate").on("click",function(){
+        $(".date-seleted").val('');
+    });
+
     
 	queryOrderStatus();
     /*查询*/
@@ -19,6 +24,11 @@ $(function(){
         var num = (end_date-sta_date)/(1000*3600*24); //天数
         var days = parseInt(Math.ceil(num));//转化为整天（小于零的话剧不用转了）
 
+         if(start == ''){
+            $.alert("请选择起始日期");
+        }else if(end == ''){
+            $.alert("请选择终止日期");
+        }
         if( days<0){
             $.alert("请选择正确的日期");
             return;

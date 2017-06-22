@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>车辆地图</title>
+    <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
+    <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
+    <link rel="stylesheet" href="../../public/lib/leaflet/leaflet.css">
+    <link rel="stylesheet" href="../../public/css/cars-map.css">
+    <script>
+        function selectmenu(n){
+            var eleMore = document.getElementById("menu_"+n);
+            if(eleMore.style.display=="none"){
+                eleMore.style.display = 'block';
+                $("#cell_"+n).removeClass("icon-74");
+                $("#cell_"+n).addClass("icon-35 ");
+
+            }else{
+                eleMore.style.display = 'none';
+                $("#cell_"+n).removeClass("icon-35");
+                $("#cell_"+n).addClass("icon-74");
+
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+
+
+    <div class="locale-car-query">
+        <a href="javascript:;"></a>
+        <input type="text" placeholder="请输入要查询的DN/TPL号" id="inputQuery">
+        <span id="queryOrder"></span>
+    </div>
+    <div id="map"></div>
+    <div class="selected-list">
+        <div class="head-title" onclick="selectmenu('1');">
+            <span id="hasSelected">订单详情</span>
+            <a id="cell_1" class="icon icon-74 f20 f-blue"></a>
+        </div>
+        <div class="selected-info" id="menu_1">
+            <ul id="selectedShow">
+                <!--坑-->
+                <li>VOB号：V00112343545656745</li>
+                <li>DN号：DN123</li>
+                <li>PO号：PO123</li>
+                <li>物科号：K66</li>
+                <li>件数：1000</li>
+                <li>箱数：500</li>
+                <li>毛重：106.5</li>
+                <li>体积：23.65</li>
+            </ul>
+        </div>
+    </div>
+
+
+<script type="text/javascript" src="../../public/lib/weui+/zepto.min.js"></script>
+<script type="text/javascript" src="../../public/lib/leaflet/leaflet.js"></script>
+<script>
+        $(function(){
+
+            //设置高度
+            var height = $(window).height();
+            var h1=$(".locale-car-query").height()+30;
+            $("#map").css("height",height-h1);
+
+            // create a map in the "map" div, set the view to a given place and zoom
+            //var map = L.map('map').setView([39.9, 116.39], 4);
+            var map = L.map('map', {
+                center: [35.300454,108.755593],
+                zoom: 6
+            });
+            // add an OpenStreetMap tile layer
+            //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+            var arcgisUrl="http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer/tile/{z}/{y}/{x}";
+            L.tileLayer(arcgisUrl, {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+
+
+
+            //添加圆
+            var blueC = L.circle([40.11317,94.68024], 1500, {
+                color: 'blue',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(map);
+            var redC = L.circle([37.99926,114.4776], 1500, {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(map);
+            var greenC = L.circle([24.96971,102.67829], 1500, {
+                color: 'green',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(map);
+            var orangeC = L.circle([29.53131,106.53993], 1500, {
+                color: 'orange',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(map);
+            var purpleC = L.circle([44.09323, 117.02649], 1500, {
+                color: 'purple',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(map);
+
+
+            // create a red polyline from an array of LatLng points
+            var blue = [
+                [40.11317,94.68024],
+                [36.5722,101.77737],
+                [36.08057,103.85378],
+                [34.5734,105.70771],
+                [34.34837,108.94045],
+                [32.0656,114.08209],
+                [31.91651,120.91559],
+                [30.97927,121.81647]
+            ];
+            var red = [
+                [37.99926,114.4776],
+                [36.03451,111.51129],
+                [34.34837,108.94045],
+                [30.65851,104.06253],
+                [29.53131,106.53993]
+            ];
+            var green = [
+                [24.96971,102.67829],
+                [24.98784,103.66702],
+                [25.48473,103.79886],
+                [26.55098, 104.84256],
+                [26.56081, 106.73221],
+                [26.3641, 108.06155],
+                [25.25641, 110.29178]
+            ];
+            var orange = [
+                [29.53131,106.53993],
+                [30.25128, 109.48978],
+                [30.75297, 111.32449],
+                [30.96903, 112.18141],
+                [31.72433, 113.29652],
+                [32.10286, 114.06009],
+                [32.84598, 115.81793],
+                [33.58129, 117.00446],
+                [34.58219, 119.17975]
+            ];
+            var purple = [
+                [44.09323, 117.02649],
+                [43.10673, 115.22473],
+                [42.27876, 115.0928],
+                [40.9565, 113.12625],
+                [40.8153, 111.65408],
+                [39.5564, 109.80838],
+                [37.57226, 107.61112],
+                [35.49806, 106.67728],
+                [35.35963, 96.3722]
+            ];
+            var blueLine = L.polyline(blue, {color: 'blue',weight:1,lineCap:'round'}).addTo(map);
+            var redLine = L.polyline(red, {color: 'red',weight:1,lineCap:'round'}).addTo(map);
+            var greenLine = L.polyline(green, {color: 'green',weight:1,lineCap:'round'}).addTo(map);
+            var greenLine = L.polyline(orange, {color: 'orange',weight:1,lineCap:'round'}).addTo(map);
+            var purpleLine = L.polyline(purple, {color: 'purple',weight:1,lineCap:'round'}).addTo(map);
+
+
+            //添加图标
+            var carBlue = L.icon({
+                iconUrl: '../../public/images/car1.png',
+                iconSize: [30, 30],
+            });
+            var carRed = L.icon({
+                iconUrl: '../../public/images/car-red.png',
+                iconSize: [30, 30],
+            });
+            var carGreen = L.icon({
+                iconUrl: '../../public/images/car-green.png',
+                iconSize: [30, 30],
+            });
+            var carOrange = L.icon({
+                iconUrl: '../../public/images/car-orange.png',
+                iconSize: [30, 30],
+            });
+            var carPurple = L.icon({
+                iconUrl: '../../public/images/car-purple.png',
+                iconSize: [30, 30],
+            });
+
+            var housePurple = L.icon({
+                iconUrl: '../../public/images/house-purple.png',
+                iconSize: [20, 20],
+            });
+            var houseGreen = L.icon({
+                iconUrl: '../../public/images/house-green.png',
+                iconSize: [20, 20],
+            });
+            var houseBlue = L.icon({
+                iconUrl: '../../public/images/house-blue.png',
+                iconSize: [20, 20],
+            });
+            var houseRed = L.icon({
+                iconUrl: '../../public/images/house-red.png',
+                iconSize: [20, 20],
+            });
+            var houseOrange = L.icon({
+                iconUrl: '../../public/images/house-orange.png',
+                iconSize: [20, 20],
+            });
+
+            var html = '<div>TPL码：123456</div>' +
+                    '<div>供应商：北京XX有限公司北京XX有限公司北京XX有限公司北京XX有限公司北京XX有限公司</div>' +
+                    '<div>司机姓名：李明</div>' +
+                    '<div>司机电话：13030230289</div>' +
+                    '<div>车牌号：沪F39010</div>';
+
+            L.marker([30.97928,121.81645], {icon: carBlue}).addTo(map).bindPopup(html);
+            L.marker([29.53131,106.53993], {icon: carRed}).addTo(map).bindPopup(html);;
+            L.marker([25.25641, 110.29178], {icon: carGreen}).addTo(map).bindPopup(html);;
+            L.marker([34.58219, 119.17975], {icon: carOrange}).addTo(map).bindPopup(html);;
+            L.marker([35.35963, 96.3722], {icon: carPurple}).addTo(map).bindPopup(html);;
+
+            L.marker([39.12492, 117.20215], {icon: housePurple}).addTo(map);
+            L.marker([37.49307, 121.39345], {icon: houseGreen}).addTo(map);
+            L.marker([36.06766, 120.35524], {icon: houseBlue}).addTo(map);
+            L.marker([31.19569, 121.49783], {icon: houseRed}).addTo(map);
+            L.marker([26.02083, 119.28961], {icon: houseOrange}).addTo(map);
+
+
+
+            function onMapClick(e) {
+                alert("You clicked the map at " + e.latlng); //点击出现经纬度
+            }
+            //map.on('click', onMapClick);
+
+        });
+
+
+
+
+    </script>
+
+
+</body>
+</html>

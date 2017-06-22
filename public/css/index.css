@@ -13,13 +13,13 @@
     color: #fff;
 }
 .top-bar .username{
-    font-size: 0.3rem;
+    font-size: 16px;
     position: absolute;
     left: 1rem;
     top: 0.3rem;
 }
 .top-bar button{
-    font-size: 0.2rem;
+    font-size: 12px;
     padding: 0.1rem 0.25rem;
     color:#fff;
     background-color: #0f1d4a;
@@ -61,7 +61,6 @@
     height:1rem;
     margin: 0.3rem auto;
     background-color: #fff;
-    font-size: 1rem;
     display: block;
     text-align: center;
     padding:0.3rem 0;
@@ -99,7 +98,7 @@
 .menu ul li a p{
     width: 100%;
     text-align: center;
-    font-size: 0.3rem;
+    font-size: 16px;
     color: #3f3f3f;
 }
 .mb{
@@ -212,7 +211,7 @@
 
 .slide .slide-desc{
     text-align: left;
-    font-size: 0.3rem;
+    font-size: 16px;
 }
 .slide .dot .cur{
     background-color: #fff;

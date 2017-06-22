@@ -8,65 +8,107 @@
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui.css">
     <link rel="stylesheet" href="../../public/lib/weui+/style/weui2.css">
     <link rel="stylesheet" href="../../public/css/reservation-new.css">
-    <script>
-        function selectmenu(n){
-            var eleMore = document.getElementById("menu_"+n);
-            if(eleMore.style.display=="none"){
-                eleMore.style.display = 'block';
-                $("#cell_"+n).removeClass("icon-74");
-                $("#cell_"+n).addClass("icon-35 ");
-
-            }else{
-                eleMore.style.display = 'none';
-                $("#cell_"+n).removeClass("icon-35");
-                $("#cell_"+n).addClass("icon-74");
-
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="layout">
         <div class="select-appointment">
-            <ul>
+            <div class="input-group">
+                <span>起运港：</span><select>
+                    <option value="">选择起运港</option>
+                    <option value="">上海</option>
+                    <option value="">宁波</option>
+                    <option value="">厦门</option>
+                    <option value="">青岛</option>
+                    <option value="">天津</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span>中外运仓库：</span><select>
+                    <option value="">选择中外运仓库</option>
+                    <option value="">上海仓库</option>
+                    <option value="">洋山仓库</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span>集货交期：</span><select>
+                    <option value="">选择集货交期</option>
+                    <option value="">2017-06-05</option>
+                    <option value="">2017-02-12</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span>目的港交期：</span><select>
+                    <option value="">选择目的港交期</option>
+                    <option value="">2016-06-05</option>
+                    <option value="">2016-02-12</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span>预约日期：</span><select>
+                    <option value="">选择预约日期</option>
+                    <option value="">2016-06-05</option>
+                    <option value="">2016-02-12</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span>预约时段：</span><select>
+                    <option value="">选择预约时段</option>
+                    <option value="">09：00-10:00</option>
+                    <option value="">09：00-11:00</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span>备注：</span><input class="date-seleted" type="text">
+            </div>
+
+            <div class="check-box">
+                <input type="checkbox"> 是否接受排队等待<br/><br/>
+                <input type="checkbox"> 是否task订单
+            </div>
+
+
+
+
+
+            <!--<ul>
                 <li onclick="selectmenu('1');" class='la'>起运港：
                     <span class="portOfLoading" ></span>
                     <a id="cell_1" class="icon icon-74 f20 f-gray"></a>
                 </li>
-                <!--选择起运港-->
+                &lt;!&ndash;选择起运港&ndash;&gt;
                 <div class="warehouse" id="menu_1" style="display: none;">
                     <ul class="clearfix" id="searchHouse1">
-                        <!--<li>上海</li>
+                        &lt;!&ndash;<li>上海</li>
                         <li>宁波</li>
                         <li>深圳</li>
                         <li>北京</li>
                         <li>广东</li>
                         <li>天津</li>
-                        <li>厦门</li>-->
+                        <li>厦门</li>&ndash;&gt;
                     </ul>
                 </div>
                 <li onclick="selectmenu('2');">中外运仓库：
                     <span  class="zwyWarehouse"></span>
                     <a id="cell_2" class="icon icon-74 f20 f-gray"></a>
                 </li>
-                <!--选择仓库-->
+                &lt;!&ndash;选择仓库&ndash;&gt;
                 <div class="warehouse" id="menu_2" style="display: none;">
                     <ul class="clearfix" id="searchHouse2">
-                        <!--<li>上海仓库</li>
+                        &lt;!&ndash;<li>上海仓库</li>
                         <li>宁波仓库</li>
-                        <li>深圳仓库</li>-->
+                        <li>深圳仓库</li>&ndash;&gt;
                     </ul>
                 </div>
                 <li onclick="selectmenu('3');">集货交期：
                     <span class="date1"></span>
                     <a id="cell_3" class="icon icon-74 f20 f-gray"></a>
                 </li>
-                <!--选择集货交期-->
+                &lt;!&ndash;选择集货交期&ndash;&gt;
                 <div class="warehouse" id="menu_3" style="display: none;">
                     <ul class="clearfix" id="searchHouse3">
-                        <!--<li>2017-05-12</li>
+                        &lt;!&ndash;<li>2017-05-12</li>
                         <li>2017-05-12</li>
-                        <li>2017-05-12</li>-->
+                        <li>2017-05-12</li>&ndash;&gt;
                     </ul>
                 </div>
 
@@ -74,12 +116,12 @@
                     <span class="date2"></span>
                     <a id="cell_4" class="icon icon-74 f20 f-gray"></a>
                 </li>
-                <!--选择目的港交期-->
+                &lt;!&ndash;选择目的港交期&ndash;&gt;
                 <div class="warehouse" id="menu_4" style="display: none;">
                     <ul class="clearfix" id="searchHouse4">
-                        <!--<li>2017-05-12</li>
+                        &lt;!&ndash;<li>2017-05-12</li>
                         <li>2017-05-12</li>
-                        <li>2017-05-12</li>-->
+                        <li>2017-05-12</li>&ndash;&gt;
                     </ul>
                 </div>
 
@@ -88,31 +130,32 @@
                     <span class="date3"></span>
                     <a id="cell_5" class="icon icon-74 f20 f-gray"></a>
                 </li>
-                <!--选择预约日期-->
+                &lt;!&ndash;选择预约日期&ndash;&gt;
                 <div class="warehouse" id="menu_5" style="display: none;">
                     <ul class="clearfix" id="searchHouse5">
-                        <!--<li>2017-05-12</li>
+                        &lt;!&ndash;<li>2017-05-12</li>
                         <li>2017-05-12</li>
-                        <li>2017-05-12</li>-->
+                        <li>2017-05-12</li>&ndash;&gt;
                     </ul>
                 </div>
                 <li onclick="selectmenu('6');">预约时段：
                     <span class="date4"></span>
                     <a id="cell_6" class="icon icon-74 f20 f-gray"></a>
                 </li>
-                <!--选择预约时段-->
+                &lt;!&ndash;选择预约时段&ndash;&gt;
                 <div class="warehouse" id="menu_6" style="display: none;">
                     <ul class="clearfix" id="searchHouse6">
-                        <!--<li>10:00-11:00</li>
+                        &lt;!&ndash;<li>10:00-11:00</li>
                         <li>10:00-11:00</li>
-                        <li>10:00-11:00</li>-->
+                        <li>10:00-11:00</li>&ndash;&gt;
                     </ul>
                 </div>
-                <li><input type="text" placeholder="备注"></li>
 
-            </ul><br/>
-            <input type="checkbox"> 是否接受排队等待<br/><br/>
-            <input type="checkbox"> 是否task订单
+
+            </ul><br/>-->
+
+
+
         </div>
         <div class="select-apm-query">
             <a href="reservation-query-result.html">

@@ -237,7 +237,7 @@ th {
 body {
     font-size: 14px;
     background-color: #eee;
-    font-family: "Microsoft Yahei";
+    font-family: "Microsoft Yahei" !important;
 }
 *,
 ::before,
@@ -254,6 +254,9 @@ input{
 }
 a{
     text-decoration: none;
+}
+i{
+    font-style: normal;
 }
 ul {
     list-style: none;
